@@ -10,6 +10,7 @@ namespace LibraryWeb.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
         public ActionResult Index()
         {
             var db = new ApplicationDbContext();

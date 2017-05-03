@@ -16,6 +16,7 @@ namespace LibraryWeb.Controllers
     public class LibraryController : Controller
     {
         // GET: Library
+        [Authorize]
         public ActionResult Index()
         {
             return View();
