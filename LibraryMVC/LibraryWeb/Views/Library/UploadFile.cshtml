@@ -1,0 +1,83 @@
+﻿@model LibraryModel.Book
+@{
+    ViewBag.Title = Model.Title;
+}
+<style>
+    .table {
+        width: 65%;
+        text-align: right;
+    }
+
+    th {
+        font-size: 16px;
+        font-weight: normal;
+        background: #b9c9fe;
+        border-top: 4px solid #aabcfe;
+        border-bottom: 1px solid #fff;
+        color: #039;
+        padding: 8px;
+        text-align: right;
+    }
+
+    td {
+        background: #e8edff;
+        border-bottom: 1px solid #fff;
+        color: #669;
+        border-top: 1px solid transparent;
+        padding: 8px;
+    }
+
+    tr:hover td {
+        background: #ccddff;
+    }
+
+
+    h3 {
+        color: #d04764;
+        font-family: ‘Lobster’, cursive;
+        font-size: 36px;
+        font-weight: normal;
+        line-height: 48px;
+        margin: 0 0 18px;
+        text-shadow: 1px 0 0 #fff;
+    }
+
+    h4 {
+        color: #2CA4B0;
+        font-family: ‘Oleo Script’, cursive;
+        font-size: 24px;
+        font-weight: normal;
+        line-height: 32px;
+        margin: 0 0 18px;
+        text-shadow: 1px 0 0 #fff;
+    }
+
+    div {
+        color: #333;
+        font-family: ‘Original Surfer’, cursive;
+        font-size: 16px;
+        line-height: 28px;
+    }
+</style>
+
+<h3>@Model.Title</h3>
+<h4> Автор: @Model.Author </h4>
+<div> Город: @Model.Town </div>
+<div> Издательство: @Model.Izdatelstvo </div>
+<div> Год издания: @Model.YearOfPublic </div>
+<div> Количество экземпляров: @Model.SumOfBooks </div>
+<table class="table">
+    <tr>
+        <th>
+            Читатель  &emsp; &emsp;  Группа &emsp;  Выдача &emsp; &emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        </th>
+    </tr>
+    @foreach (var students in @Model.student)
+    {
+        <tr>
+            <td>
+                @students.ToString()
+            </td>
+        </tr>
+    }
+</table>

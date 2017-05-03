@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Games\C#\MyProjectSborDannyh\LibraryMVC\LibraryWeb\obj\Release\Package\PackageTmp" />
+  <setAcl path="C:\Games\C#\MyProjectSborDannyh\LibraryMVC\LibraryWeb\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Games\C#\MyProjectSborDannyh\LibraryMVC\LibraryWeb\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

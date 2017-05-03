@@ -1,0 +1,22 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Загрузка информации о книге";
+}
+<style>
+    .one { color: #d04764; font-family: ‘Lobster’, cursive; font-size: 36px; font-weight: normal; line-height: 48px; margin: 0 0 10px; text-shadow: 1px 0 0 #fff; }
+    .two { color: #2CA4B0; font-family: ‘Oleo Script’, cursive; font-size: 24px; font-weight: normal; line-height: 32px; margin: 0 0 5px; text-shadow: 1px 0 0 #fff; }
+</style>
+
+
+<h3 class="one">Загрузка информации о книге</h3>
+<h4 class="two">Basic File Upload</h4>
+
+@using (Html.BeginForm("UploadFile", "Library", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Выберите файл lb</label>
+    <input type="file" name="file" id="file" /><br>
+    <input type="submit" value="Отправить" />
+    <br><br>
+    @ViewBag.Message
+}

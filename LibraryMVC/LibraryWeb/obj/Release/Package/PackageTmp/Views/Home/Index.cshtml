@@ -1,0 +1,61 @@
+﻿@model IEnumerable<LibraryWeb.Models.UserBook>
+@{
+    ViewBag.Title = "Библиотека";
+}
+<style>
+    .table {width: 65%;
+            text-align:right;
+    }
+    th {
+  font-size: 16px;
+  font-weight: normal;
+  background: #b9c9fe;
+  border-top: 4px solid #aabcfe;
+  border-bottom: 1px solid #fff;
+  color: #039;
+  padding: 8px;
+  text-align:right;
+}
+td {
+  background: #e8edff;
+  border-bottom: 1px solid #fff;
+  color: #669;
+  border-top: 1px solid transparent;
+  padding: 8px;
+}
+tr:hover td {background: #ccddff;}
+
+
+h3 { color: #d04764; font-family: ‘Lobster’, cursive; font-size: 36px; font-weight: normal; line-height: 48px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; }
+h4 { color: #2CA4B0; font-family: ‘Oleo Script’, cursive; font-size: 24px; font-weight: normal; line-height: 32px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; }
+div { color: #333; font-family: ‘Original Surfer’, cursive; font-size: 16px; line-height: 28px;  }
+</style>
+<h1> </h1>
+<h4>Загрузите новый файл по @Html.ActionLink("ссылке", "Index", "Library")</h4>
+
+@foreach (var a in Model)
+{
+    <h3>@a.Title</h3> @Html.ActionLink("Скачать в EXCEL", "Download", "Library", new { resoureId = a.Id }, null)
+    <h4>@a.Author</h4>
+    <div>@a.Izdatelstvo</div>
+    <div>@a.Town @a.YearOfPublic</div>
+    <div>ISBN: @a.ISBN</div>
+    <div>Всего @a.SumOfBooks экземпляров книги</div>
+    <div>Читатели:</div>
+    <div></div>
+    <table class="table" >
+        <tr>
+            <th>
+                Читатель  &emsp;   Группа &emsp;  Выдача  &emsp; Возврат до
+            </th>
+        </tr>
+        @foreach (var student in a.Students)
+        {
+            <tr>
+                <td> 
+                    @student.ToString()
+                </td>
+            </tr>
+        }
+    </table>
+}
