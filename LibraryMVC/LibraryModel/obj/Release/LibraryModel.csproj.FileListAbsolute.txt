@@ -1,0 +1,5 @@
+C:\Games\C#\LibraryMVC\LibraryModel\bin\Release\LibraryModel.dll
+C:\Games\C#\LibraryMVC\LibraryModel\bin\Release\LibraryModel.pdb
+C:\Games\C#\LibraryMVC\LibraryModel\obj\Release\LibraryModel.csprojResolveAssemblyReference.cache
+C:\Games\C#\LibraryMVC\LibraryModel\obj\Release\LibraryModel.dll
+C:\Games\C#\LibraryMVC\LibraryModel\obj\Release\LibraryModel.pdb

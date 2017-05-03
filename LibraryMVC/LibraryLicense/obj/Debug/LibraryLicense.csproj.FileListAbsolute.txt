@@ -1,0 +1,11 @@
+C:\Games\C#\LibraryMVC\LibraryLicense\bin\Debug\LibraryLicense.exe.config
+C:\Games\C#\LibraryMVC\LibraryLicense\bin\Debug\LibraryLicense.exe
+C:\Games\C#\LibraryMVC\LibraryLicense\bin\Debug\LibraryLicense.pdb
+C:\Games\C#\LibraryMVC\LibraryLicense\obj\Debug\LibraryLicense.csprojResolveAssemblyReference.cache
+C:\Games\C#\LibraryMVC\LibraryLicense\obj\Debug\LibraryLicense.Form1.resources
+C:\Games\C#\LibraryMVC\LibraryLicense\obj\Debug\LibraryLicense.Properties.Resources.resources
+C:\Games\C#\LibraryMVC\LibraryLicense\obj\Debug\LibraryLicense.csproj.GenerateResource.Cache
+C:\Games\C#\LibraryMVC\LibraryLicense\obj\Debug\LibraryLicense.exe
+C:\Games\C#\LibraryMVC\LibraryLicense\obj\Debug\LibraryLicense.pdb
+C:\Games\C#\LibraryMVC\LibraryLicense\bin\Debug\LibraryModel.dll
+C:\Games\C#\LibraryMVC\LibraryLicense\bin\Debug\LibraryModel.pdb

@@ -1,0 +1,12 @@
+C:\Games\C#\LibraryMVC\Library\bin\Release\Library.exe.config
+C:\Games\C#\LibraryMVC\Library\bin\Release\Library.exe
+C:\Games\C#\LibraryMVC\Library\bin\Release\Library.pdb
+C:\Games\C#\LibraryMVC\Library\bin\Release\LibraryModel.dll
+C:\Games\C#\LibraryMVC\Library\bin\Release\LibraryModel.pdb
+C:\Games\C#\LibraryMVC\Library\obj\Release\Library.csprojResolveAssemblyReference.cache
+C:\Games\C#\LibraryMVC\Library\obj\Release\Library.Form1.resources
+C:\Games\C#\LibraryMVC\Library\obj\Release\Library.FormForUsers.resources
+C:\Games\C#\LibraryMVC\Library\obj\Release\Library.Properties.Resources.resources
+C:\Games\C#\LibraryMVC\Library\obj\Release\Library.csproj.GenerateResource.Cache
+C:\Games\C#\LibraryMVC\Library\obj\Release\Library.exe
+C:\Games\C#\LibraryMVC\Library\obj\Release\Library.pdb

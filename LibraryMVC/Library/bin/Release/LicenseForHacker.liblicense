@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<LicenseDto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ToWhom>Hacker normall777</ToWhom>
+  <ValidFrom>2017-04-15T18:17:46</ValidFrom>
+  <ValidTo>2125-04-15T18:17:46</ValidTo>
+  <Features>
+    <LicenseFeatures>Read</LicenseFeatures>
+    <LicenseFeatures>Write</LicenseFeatures>
+  </Features>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>Rth4fojJz9osfJP3X/qnlC9BTSM=</DigestValue></Reference></SignedInfo><SignatureValue>XpAcv54hplhR8wSh3MrH//mnRkb/BIWnZrgy0pkzGjys9MA7r+5dEkzVQT018FH+LlV8jhHSSBowVMp/1SmDb5POJKT1ogqUVLrdFDYWgewq9dO1Oo724jUCvXplknX874k4Xsu1Lw9Be04uJGiEbKbX2d2spZRsmqXZ/gxu1Qk=</SignatureValue></Signature></LicenseDto>
