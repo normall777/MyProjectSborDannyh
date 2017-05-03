@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "GLADOS";
+}
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+<body background="~/pic/glados.png" text=white>
+    <bgsound src="~/pic/glados.mp3">
+        <style type="text/css">
+            a img {
+                border: none; /* Убираем рамку */
+            }
+            .knopka {
+                position:relative;
+                bottom:450px;
+                left:475px;
+            }
+            .punkt{
+                font-size:20px;
+            }
+        </style>
+        <h1>Упс, кажется, что-то пошло не так...</h1></br>
+        <h2>Могут быть несколько причин:</h2>
+        <ul class="punkt">
+            <li> Это предложение ложно! Не думай об этом, не думай об этом, не думай об этом, не думай об этом, не думай об этом...</li>
+            <li>Сайт захватило НЛО и твой друг-кубик </li>
+            <p> <IMG src="~/pic/kubik.jpg" width=300>
+            <li>Тортик - ложь!!!</li>
+            <p> <IMG src="~/pic/tortik.jpg" width=300 alt="Тортика нет!!!">
+        </ul>
+        <table class="knopka">
+            <tr>
+                <td>
+                    <center><h1>Отключи GLADOS!</h1></center>
+                    <img src="~/pic/knopka.jpg" width=300 alt="ЖМИ!!!" usemap="#off">
+                    <map name="off"><area share="rect" coords="75, 40, 240, 170" href="@Url.Action("Index","Home")"></map>
+                </td>
+            </tr>
+        </table>
+</body>
