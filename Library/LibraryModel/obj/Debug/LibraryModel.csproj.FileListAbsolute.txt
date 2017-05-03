@@ -1,0 +1,10 @@
+C:\Games\C#\LibraryMVC\LibraryModel\bin\Debug\LibraryModel.dll
+C:\Games\C#\LibraryMVC\LibraryModel\bin\Debug\LibraryModel.pdb
+C:\Games\C#\LibraryMVC\LibraryModel\obj\Debug\LibraryModel.csprojResolveAssemblyReference.cache
+C:\Games\C#\LibraryMVC\LibraryModel\obj\Debug\LibraryModel.dll
+C:\Games\C#\LibraryMVC\LibraryModel\obj\Debug\LibraryModel.pdb
+C:\Games\Интерфейсы\Library\LibraryModel\bin\Debug\LibraryModel.dll
+C:\Games\Интерфейсы\Library\LibraryModel\bin\Debug\LibraryModel.pdb
+C:\Games\Интерфейсы\Library\LibraryModel\obj\Debug\LibraryModel.csprojResolveAssemblyReference.cache
+C:\Games\Интерфейсы\Library\LibraryModel\obj\Debug\LibraryModel.dll
+C:\Games\Интерфейсы\Library\LibraryModel\obj\Debug\LibraryModel.pdb

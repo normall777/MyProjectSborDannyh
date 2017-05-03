@@ -1,0 +1,13 @@
+C:\Games\C#\Для интерфейсов\Для интерфейсов\bin\Debug\Для интерфейсов.exe.config
+C:\Games\C#\Для интерфейсов\Для интерфейсов\bin\Debug\Для интерфейсов.exe
+C:\Games\C#\Для интерфейсов\Для интерфейсов\bin\Debug\Для интерфейсов.pdb
+C:\Games\C#\Для интерфейсов\Для интерфейсов\obj\Debug\Libruary.csprojResolveAssemblyReference.cache
+C:\Games\C#\Для интерфейсов\Для интерфейсов\obj\Debug\Для_интерфейсов.Form1.resources
+C:\Games\C#\Для интерфейсов\Для интерфейсов\obj\Debug\Для_интерфейсов.Form2.resources
+C:\Games\C#\Для интерфейсов\Для интерфейсов\obj\Debug\Для_интерфейсов.Properties.Resources.resources
+C:\Games\C#\Для интерфейсов\Для интерфейсов\obj\Debug\Libruary.csproj.GenerateResource.Cache
+C:\Games\C#\Для интерфейсов\Для интерфейсов\obj\Debug\Для интерфейсов.exe
+C:\Games\C#\Для интерфейсов\Для интерфейсов\obj\Debug\Для интерфейсов.pdb
+C:\Games\C#\Libruary\Libruary\bin\Debug\Для интерфейсов.exe.config
+C:\Games\C#\Libruary\Libruary\obj\Debug\Для интерфейсов.exe
+C:\Games\C#\Libruary\Libruary\obj\Debug\Для интерфейсов.pdb
