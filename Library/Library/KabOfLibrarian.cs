@@ -47,7 +47,7 @@ namespace Library
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //List<Student> students = new List<Student> { };
+            //List<Student> studentsInDGV = new List<Student> { };
         }
 
         private void buttonAddUser_Click(object sender, EventArgs e)
@@ -58,6 +58,7 @@ namespace Library
                 dataGridViewUsers.Rows.Add();
                 int numberOfUsers = Convert.ToInt32(dataGridViewUsers.Rows.Count.ToString())-1;
                 var newStudent = form.GetObject();
+                students.Add(newStudent);
                 dataGridViewUsers.Rows[numberOfUsers].Cells[0].Value = newStudent.Name + " " + newStudent.Surname;
                 dataGridViewUsers.Rows[numberOfUsers].Cells[1].Value = newStudent.NumberOfTicket;
                 dataGridViewUsers.Rows[numberOfUsers].Cells[2].Value = newStudent.Vidacha.ToString("d");
@@ -92,10 +93,7 @@ namespace Library
                 Town = textBoxTown.Text,
                 YearOfPublic = Decimal.ToInt32(numericUpDownYearOfPublic.Value),
                 //student = dataGridViewUsers.da.OfType<Student>.ToList()
-                student = new Student
-                {
-                    Name = dataGridViewUsers.Rows.,
-                }
+                student = students
                 
                 //student = listBoxUsers.Items.OfType<Student>().ToList(),
                 //CountOfStudent = listBoxUsers.Items.OfType<Student>().Count()
@@ -112,7 +110,7 @@ namespace Library
             numericUpDownYearOfPublic.Value = data.YearOfPublic;
             dataGridViewUsers.Rows.Clear();
             int numberOfUsers = 0;
-            dataGridViewUsers.Rows.Add(data.student.Count()-1);
+            dataGridViewUsers.Rows.Add(data.student.Count());
             foreach (var item in data.student)
             {
                 dataGridViewUsers.Rows[numberOfUsers].Cells[0].Value = item.Name + " " + item.Surname;
