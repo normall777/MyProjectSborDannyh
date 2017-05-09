@@ -21,5 +21,10 @@ namespace Library
         {
             this.Hide();
         }
+
+        private void CollectOfBooks_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

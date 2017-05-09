@@ -10,8 +10,8 @@ namespace Library
 {
     public partial class KabOfLibrarian : Form
     {
-        static bool exit;
-        List<Student> students = new List<Student> { };
+        static bool exit;//С этой переменной можно сделать нормальный выход
+        List<Student> students = new List<Student> { };//Хранит студентов на форме, позволяет сохранять
         public KabOfLibrarian()
         {
             InitializeComponent();
@@ -25,19 +25,6 @@ namespace Library
                 authentication = (Authentication)o;
             }
             labelLogin.Text = $"Вы вошли как {login}";
-
-
-            //int id = dataGridViewUsers.Rows.Add();
-            //dataGridViewUsers.Rows[id].Cells[0].Value = "Изотов Илья";
-            //dataGridViewUsers.Rows[id].Cells[1].Value = "6229491916261";
-            //dataGridViewUsers.Rows[id].Cells[2].Value = "03.12.1996";
-            //dataGridViewUsers.Rows[id].Cells[3].Value = "03.12.1998";
-
-            //id = dataGridViewUsers.Rows.Add();
-            //dataGridViewUsers.Rows[id].Cells[0].Value = "Изотов Илья";
-            //dataGridViewUsers.Rows[id].Cells[1].Value = "6229491916261";
-            //dataGridViewUsers.Rows[id].Cells[2].Value = "03.12.1996";
-            //dataGridViewUsers.Rows[id].Cells[3].Value = "03.12.1998";
         }
 
         protected override void OnDeactivate(EventArgs e)
@@ -112,12 +99,13 @@ namespace Library
             dataGridViewUsers.Rows.Clear();
             int numberOfUsers = 0;
             dataGridViewUsers.Rows.Add(data.student.Count());
-            foreach (var item in data.student)
+            foreach (var item in students)
             {
                 dataGridViewUsers.Rows[numberOfUsers].Cells[0].Value = item.Name + " " + item.Surname;
                 dataGridViewUsers.Rows[numberOfUsers].Cells[1].Value = item.NumberOfTicket;
                 dataGridViewUsers.Rows[numberOfUsers].Cells[2].Value = item.Vidacha.ToString("d");
                 dataGridViewUsers.Rows[numberOfUsers].Cells[3].Value = item.Sdacha.ToString("d");
+                numberOfUsers++;
             }
             ProverkaNalichia();
         }
@@ -128,6 +116,7 @@ namespace Library
 
         private void SaveFile()
         {
+            var mydocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             var sfd = new SaveFileDialog() { Filter = "*.lb|*.lb" };
             if (sfd.ShowDialog(this) == DialogResult.OK)
             {
@@ -158,8 +147,9 @@ namespace Library
                 }
                 SetObject(data);
             }
-            buttonDeleteUser.Enabled = false;
-            buttonCheat.Enabled = false;
+            //buttonDeleteUser.Enabled = false;
+            //buttonCheat.Enabled = false;
+            ProverkaNalichia();
         }
 
         private void ProverkaNalichia()

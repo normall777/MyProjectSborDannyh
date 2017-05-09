@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectOfBooks));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TitleOfBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AutorOfBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -132,8 +133,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CollectOfBooks";
             this.Text = "Список книг";
+            this.Load += new System.EventHandler(this.CollectOfBooks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
