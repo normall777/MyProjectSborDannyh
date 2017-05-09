@@ -10,6 +10,7 @@ namespace Library
 {
     public partial class KabOfLibrarian : Form
     {
+        static bool exit;
         List<Student> students = new List<Student> { };
         public KabOfLibrarian()
         {
@@ -26,17 +27,17 @@ namespace Library
             labelLogin.Text = $"Вы вошли как {login}";
 
 
-            int id = dataGridViewUsers.Rows.Add();
-            dataGridViewUsers.Rows[id].Cells[0].Value = "Изотов Илья";
-            dataGridViewUsers.Rows[id].Cells[1].Value = "6229491916261";
-            dataGridViewUsers.Rows[id].Cells[2].Value = "03.12.1996";
-            dataGridViewUsers.Rows[id].Cells[3].Value = "03.12.1998";
+            //int id = dataGridViewUsers.Rows.Add();
+            //dataGridViewUsers.Rows[id].Cells[0].Value = "Изотов Илья";
+            //dataGridViewUsers.Rows[id].Cells[1].Value = "6229491916261";
+            //dataGridViewUsers.Rows[id].Cells[2].Value = "03.12.1996";
+            //dataGridViewUsers.Rows[id].Cells[3].Value = "03.12.1998";
 
-            id = dataGridViewUsers.Rows.Add();
-            dataGridViewUsers.Rows[id].Cells[0].Value = "Изотов Илья";
-            dataGridViewUsers.Rows[id].Cells[1].Value = "6229491916261";
-            dataGridViewUsers.Rows[id].Cells[2].Value = "03.12.1996";
-            dataGridViewUsers.Rows[id].Cells[3].Value = "03.12.1998";
+            //id = dataGridViewUsers.Rows.Add();
+            //dataGridViewUsers.Rows[id].Cells[0].Value = "Изотов Илья";
+            //dataGridViewUsers.Rows[id].Cells[1].Value = "6229491916261";
+            //dataGridViewUsers.Rows[id].Cells[2].Value = "03.12.1996";
+            //dataGridViewUsers.Rows[id].Cells[3].Value = "03.12.1998";
         }
 
         protected override void OnDeactivate(EventArgs e)
@@ -48,15 +49,22 @@ namespace Library
         private void Form1_Load(object sender, EventArgs e)
         {
             //List<Student> studentsInDGV = new List<Student> { };
+            exit = false;
+            dataGridViewUsers.ContextMenuStrip = contextMenuStrip1;
         }
 
         private void buttonAddUser_Click(object sender, EventArgs e)
+        {
+            AddUser();
+        }
+
+        private void AddUser()
         {
             var form = new AddEditUsers();
             if (form.ShowDialog(this) == DialogResult.OK)
             {
                 dataGridViewUsers.Rows.Add();
-                int numberOfUsers = Convert.ToInt32(dataGridViewUsers.Rows.Count.ToString())-1;
+                int numberOfUsers = Convert.ToInt32(dataGridViewUsers.Rows.Count.ToString()) - 1;
                 var newStudent = form.GetObject();
                 students.Add(newStudent);
                 dataGridViewUsers.Rows[numberOfUsers].Cells[0].Value = newStudent.Name + " " + newStudent.Surname;
@@ -74,14 +82,10 @@ namespace Library
 
         private void buttonCheat_Click(object sender, EventArgs e)
         {
-            //AddEditUsers form = new AddEditUsers(GetObject().student[listBoxUsers.SelectedIndex]);
-            //if (Form.ShowDialog(this) == DialogResult.OK)
-            {
-                var student = GetObject();
-                //listBoxUsers.Items[listBoxUsers.SelectedIndex] = form.GetObject();
-            }
+            var numberOfNote = dataGridViewUsers.CurrentRow.Index;
+            RedactUser(numberOfNote);
         }
-        Book GetObject(int NumberOfUser = 0)
+        Book GetObject()
         {
             return new Book
             {
@@ -92,11 +96,7 @@ namespace Library
                 SumOfBooks = Decimal.ToInt32(numericUpDownSumOfBooks.Value),
                 Town = textBoxTown.Text,
                 YearOfPublic = Decimal.ToInt32(numericUpDownYearOfPublic.Value),
-                //student = dataGridViewUsers.da.OfType<Student>.ToList()
-                student = students
-                
-                //student = listBoxUsers.Items.OfType<Student>().ToList(),
-                //CountOfStudent = listBoxUsers.Items.OfType<Student>().Count()
+                student = students.ToList()
             };
         }
         private void SetObject(Book data)
@@ -108,6 +108,7 @@ namespace Library
             maskedTextBoxISBN.Text = data.ISBN;
             numericUpDownSumOfBooks.Value = data.SumOfBooks;
             numericUpDownYearOfPublic.Value = data.YearOfPublic;
+            students = data.student;
             dataGridViewUsers.Rows.Clear();
             int numberOfUsers = 0;
             dataGridViewUsers.Rows.Add(data.student.Count());
@@ -122,8 +123,13 @@ namespace Library
         }
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            SaveFile();
+        }
+
+        private void SaveFile()
+        {
             var sfd = new SaveFileDialog() { Filter = "*.lb|*.lb" };
-            if (sfd.ShowDialog(this)== DialogResult.OK)
+            if (sfd.ShowDialog(this) == DialogResult.OK)
             {
                 var data = GetObject();
                 var xs = new XmlSerializer(typeof(Book));
@@ -132,10 +138,14 @@ namespace Library
                     xs.Serialize(fileStream, data);
                 }
             }
-
         }
 
         private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            OpenFile();
+        }
+
+        private void OpenFile()
         {
             var ofd = new OpenFileDialog() { Filter = "*.lb|*.lb" };
             Book data;
@@ -155,39 +165,39 @@ namespace Library
         private void ProverkaNalichia()
         {
             //if (listBoxUsers.Items.Count >= numericUpDownSumOfBooks.Value)
+            if (students.Count >=numericUpDownSumOfBooks.Value)
             {
                 labelNalichie.Text = "Нет в наличии";
                 labelNalichie.ForeColor = System.Drawing.Color.Red;
                 buttonAddUser.Enabled = false;
+                toolStripMenuItemAddUser.Enabled = false;
+                добавитьЧитателяToolStripMenuItem.Enabled = false;
             }
-            //else
+            else
             {
                 labelNalichie.Text = "В наличии";
                 labelNalichie.ForeColor = System.Drawing.Color.Green;
                 buttonAddUser.Enabled = true;
+                toolStripMenuItemAddUser.Enabled = true;
+                добавитьЧитателяToolStripMenuItem.Enabled = true;
             }
-            //numericUpDownSumOfBooks.Minimum = listBoxUsers.Items.Count;
+            numericUpDownSumOfBooks.Minimum = students.Count;
         }
 
         private void buttonDeleteUser_Click(object sender, EventArgs e)
         {
-            //listBoxUsers.Items.RemoveAt(listBoxUsers.SelectedIndex);
+            var numberOfNote = dataGridViewUsers.CurrentRow.Index;
+            delUser(numberOfNote);
+        }
+
+        private void delUser(int numberOfNote)
+        {
+            students.RemoveAt(numberOfNote);
+            dataGridViewUsers.Rows.Remove(dataGridViewUsers.Rows[numberOfNote]);
             ProverkaNalichia();
             BlockDelAndCheat();
         }
 
-        private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (listBoxUsers.SelectedIndex != -1)
-            {
-                buttonDeleteUser.Enabled = true;
-                buttonCheat.Enabled = true;
-            }
-            //else
-            {
-                BlockDelAndCheat();
-            }
-        }
 
         private void Form1_Activated(object sender, EventArgs e)
         {
@@ -202,8 +212,24 @@ namespace Library
 
         private void BlockDelAndCheat()
         {
-            buttonDeleteUser.Enabled = false;
-            buttonCheat.Enabled = false;
+            if (dataGridViewUsers.RowCount == 0)
+            {
+                buttonDeleteUser.Enabled = false;
+                buttonCheat.Enabled = false;
+                редактироватьЧитателяToolStripMenuItem.Enabled = false;
+                удалитьЧитателяToolStripMenuItem.Enabled = false;
+                toolStripMenuItemDelUser.Enabled = false;
+                toolStripMenuItemEditUser.Enabled = false;
+            }
+            else
+            {
+                buttonDeleteUser.Enabled = true;
+                buttonCheat.Enabled = true;
+                редактироватьЧитателяToolStripMenuItem.Enabled = true;
+                удалитьЧитателяToolStripMenuItem.Enabled = true;
+                toolStripMenuItemEditUser.Enabled = true;
+                toolStripMenuItemDelUser.Enabled = true;
+            }
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -219,14 +245,30 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Authentication authentification = new Authentication(this);
-            this.Hide();
-            authentication.Show();
+            if (MessageBox.Show("Вы уверены, что хотите выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Authentication authentification = new Authentication(this);
+                this.Hide();
+                authentication.Show();
+            }
+            
         }
 
         private void KabOfLibrarian_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+
+            if (exit == false)
+            {
+                if (MessageBox.Show("Вы уверены, что хотите выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else {
+                    e.Cancel = false;
+                    exit = true;
+                    Application.Exit();
+                }
+            }
         }
 
         private void списокКнигToolStripMenuItem_Click(object sender, EventArgs e)
@@ -237,36 +279,26 @@ namespace Library
 
         private void добавитьЧитателяToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new AddEditUsers();
-            if (form.ShowDialog(this) == DialogResult.OK)
-            {
-                dataGridViewUsers.Rows.Add();
-                int numberOfUsers = Convert.ToInt32(dataGridViewUsers.Rows.Count.ToString());
-            }
-            ProverkaNalichia();
+            AddUser();
         }
 
         private void редактироватьЧитателяToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //AddEditUsers form = new AddEditUsers(GetObject().student[listBoxUsers.SelectedIndex]);
-            //if (Form.ShowDialog(this) == DialogResult.OK)
-            {
-                var student = GetObject();
-                //listBoxUsers.Items[listBoxUsers.SelectedIndex] = form.GetObject();
-            }
+            var numberOfNote = dataGridViewUsers.CurrentRow.Index;
+            RedactUser(numberOfNote);
         }
 
         private void удалитьЧитателяToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //listBoxUsers.Items.RemoveAt(listBoxUsers.SelectedIndex);
-            ProverkaNalichia();
-            BlockDelAndCheat();
+            var numberOfNote = dataGridViewUsers.CurrentRow.Index;
+            delUser(numberOfNote);
+            
         }
 
         private void dataGridViewUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var numberOfNote = dataGridViewUsers.CurrentRow.Index;
-            RedactUser(numberOfNote);
+            buttonCheat.Enabled = true;
+            buttonDeleteUser.Enabled = true;
         }
 
         private void RedactUser(int numberOfUsers)
@@ -279,9 +311,61 @@ namespace Library
                 dataGridViewUsers.Rows[numberOfUsers].Cells[1].Value = newStudent.NumberOfTicket;
                 dataGridViewUsers.Rows[numberOfUsers].Cells[2].Value = newStudent.Vidacha.ToString("d");
                 dataGridViewUsers.Rows[numberOfUsers].Cells[3].Value = newStudent.Sdacha.ToString("d");
+                students[numberOfUsers] = newStudent;
             }
         }
+
+        private void dataGridViewUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var numberOfNote = dataGridViewUsers.CurrentRow.Index;
+            RedactUser(numberOfNote);
+        }
+
+        private void dataGridViewUsers_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            BlockDelAndCheat();
+        }
+
+        private void toolStripMenuItemAddUser_Click(object sender, EventArgs e)
+        {
+            AddUser();
+        }
+
+        private void toolStripMenuItemEditUser_Click(object sender, EventArgs e)
+        {
+            var numberOfNote = dataGridViewUsers.CurrentRow.Index;
+            RedactUser(numberOfNote);
+        }
+
+        private void toolStripMenuItemDelUser_Click(object sender, EventArgs e)
+        {
+            var numberOfNote = dataGridViewUsers.CurrentRow.Index;
+            delUser(numberOfNote);
+        }
+
+        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFile();
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFile();
+        }
+
+        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            students.Clear();
+            dataGridViewUsers.Rows.Clear();
+            textBoxAuthor.Clear();
+            textBoxIzdatelstvo.Clear();
+            textBoxName.Clear();
+            textBoxTown.Clear();
+            maskedTextBoxISBN.Clear();
+            numericUpDownYearOfPublic.Value = 2012;
+            ProverkaNalichia();
+            numericUpDownSumOfBooks.Value = 1;
+            
+        }
     }
-
-
 }

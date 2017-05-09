@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KabOfLibrarian));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelNalichie = new System.Windows.Forms.Label();
             this.numericUpDownSumOfBooks = new System.Windows.Forms.NumericUpDown();
@@ -74,12 +76,17 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelLogin = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemAddUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemEditUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDelUser = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSumOfBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYearOfPublic)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -325,6 +332,8 @@
             this.dataGridViewUsers.Size = new System.Drawing.Size(562, 176);
             this.dataGridViewUsers.TabIndex = 9;
             this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
+            this.dataGridViewUsers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellDoubleClick);
+            this.dataGridViewUsers.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellEnter);
             // 
             // NameOfUser
             // 
@@ -441,42 +450,45 @@
             // создатьToolStripMenuItem
             // 
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.создатьToolStripMenuItem.Text = "Создать";
+            this.создатьToolStripMenuItem.Click += new System.EventHandler(this.создатьToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
+            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // списокКнигToolStripMenuItem
             // 
             this.списокКнигToolStripMenuItem.Name = "списокКнигToolStripMenuItem";
-            this.списокКнигToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.списокКнигToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.списокКнигToolStripMenuItem.Text = "Список книг";
             this.списокКнигToolStripMenuItem.Click += new System.EventHandler(this.списокКнигToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(140, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -539,6 +551,36 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemAddUser,
+            this.toolStripMenuItemEditUser,
+            this.toolStripMenuItemDelUser});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(233, 70);
+            // 
+            // toolStripMenuItemAddUser
+            // 
+            this.toolStripMenuItemAddUser.Name = "toolStripMenuItemAddUser";
+            this.toolStripMenuItemAddUser.Size = new System.Drawing.Size(232, 22);
+            this.toolStripMenuItemAddUser.Text = "Добавить пользователя";
+            this.toolStripMenuItemAddUser.Click += new System.EventHandler(this.toolStripMenuItemAddUser_Click);
+            // 
+            // toolStripMenuItemEditUser
+            // 
+            this.toolStripMenuItemEditUser.Name = "toolStripMenuItemEditUser";
+            this.toolStripMenuItemEditUser.Size = new System.Drawing.Size(232, 22);
+            this.toolStripMenuItemEditUser.Text = "Редактировать пользователя";
+            this.toolStripMenuItemEditUser.Click += new System.EventHandler(this.toolStripMenuItemEditUser_Click);
+            // 
+            // toolStripMenuItemDelUser
+            // 
+            this.toolStripMenuItemDelUser.Name = "toolStripMenuItemDelUser";
+            this.toolStripMenuItemDelUser.Size = new System.Drawing.Size(232, 22);
+            this.toolStripMenuItemDelUser.Text = "Удалить пользователя";
+            this.toolStripMenuItemDelUser.Click += new System.EventHandler(this.toolStripMenuItemDelUser_Click);
+            // 
             // KabOfLibrarian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,6 +595,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -569,6 +612,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,6 +663,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfTicket;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateVidachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateVosvrat;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAddUser;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditUser;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDelUser;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
