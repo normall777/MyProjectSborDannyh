@@ -93,19 +93,23 @@ namespace Library
             textBoxTown.Text = data.Town;
             textBoxIzdatelstvo.Text = data.Izdatelstvo;
             maskedTextBoxISBN.Text = data.ISBN;
+            numericUpDownSumOfBooks.Minimum = 0;
             numericUpDownSumOfBooks.Value = data.SumOfBooks;
             numericUpDownYearOfPublic.Value = data.YearOfPublic;
             students = data.student;
             dataGridViewUsers.Rows.Clear();
             int numberOfUsers = 0;
-            dataGridViewUsers.Rows.Add(data.student.Count());
-            foreach (var item in students)
+            if (students.Count() != 0)
             {
-                dataGridViewUsers.Rows[numberOfUsers].Cells[0].Value = item.Name + " " + item.Surname;
-                dataGridViewUsers.Rows[numberOfUsers].Cells[1].Value = item.NumberOfTicket;
-                dataGridViewUsers.Rows[numberOfUsers].Cells[2].Value = item.Vidacha.ToString("d");
-                dataGridViewUsers.Rows[numberOfUsers].Cells[3].Value = item.Sdacha.ToString("d");
-                numberOfUsers++;
+                dataGridViewUsers.Rows.Add(students.Count());
+                foreach (var item in students)
+                {
+                    dataGridViewUsers.Rows[numberOfUsers].Cells[0].Value = item.Name + " " + item.Surname;
+                    dataGridViewUsers.Rows[numberOfUsers].Cells[1].Value = item.NumberOfTicket;
+                    dataGridViewUsers.Rows[numberOfUsers].Cells[2].Value = item.Vidacha.ToString("d");
+                    dataGridViewUsers.Rows[numberOfUsers].Cells[3].Value = item.Sdacha.ToString("d");
+                    numberOfUsers++;
+                }
             }
             ProverkaNalichia();
         }
@@ -116,11 +120,12 @@ namespace Library
 
         private void SaveFile()
         {
-            var mydocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            var sfd = new SaveFileDialog() { Filter = "*.lb|*.lb" };
+            var data = GetObject();
+            var mydocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\Library";
+            var sfd = new SaveFileDialog() { Filter = "*.lb|*.lb", FileName = $"{data.Title}", InitialDirectory = mydocs, OverwritePrompt = false };
             if (sfd.ShowDialog(this) == DialogResult.OK)
             {
-                var data = GetObject();
+                
                 var xs = new XmlSerializer(typeof(Book));
                 using (var fileStream = File.Create(sfd.FileName))
                 {
@@ -132,11 +137,13 @@ namespace Library
         private void buttonOpen_Click(object sender, EventArgs e)
         {
             OpenFile();
+            BlockDelAndCheat();
         }
 
         private void OpenFile()
         {
-            var ofd = new OpenFileDialog() { Filter = "*.lb|*.lb" };
+            var mydocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Library";
+            var ofd = new OpenFileDialog() { Filter = "*.lb|*.lb", InitialDirectory = mydocs };
             Book data;
             if (ofd.ShowDialog(this) == DialogResult.OK)
             {
