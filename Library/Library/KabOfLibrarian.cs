@@ -122,7 +122,7 @@ namespace Library
         {
             var data = GetObject();
             var mydocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\Library";
-            var sfd = new SaveFileDialog() { Filter = "*.lb|*.lb", FileName = $"{data.Title}", InitialDirectory = mydocs, OverwritePrompt = false };
+            var sfd = new SaveFileDialog() { Filter = "*.lb|*.lb", FileName = $"{data.Author}.{data.Title}.{data.YearOfPublic}", InitialDirectory = mydocs, OverwritePrompt = false };
             if (sfd.ShowDialog(this) == DialogResult.OK)
             {
                 

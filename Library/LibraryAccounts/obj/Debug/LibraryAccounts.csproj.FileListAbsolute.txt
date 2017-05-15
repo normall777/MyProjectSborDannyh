@@ -1,0 +1,9 @@
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryAccounts\bin\Debug\LibraryAccounts.exe.config
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryAccounts\bin\Debug\LibraryAccounts.exe
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryAccounts\bin\Debug\LibraryAccounts.pdb
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryAccounts\obj\Debug\LibraryAccounts.Properties.Resources.resources
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryAccounts\obj\Debug\LibraryAccounts.csproj.GenerateResource.Cache
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryAccounts\obj\Debug\LibraryAccounts.exe
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryAccounts\obj\Debug\LibraryAccounts.pdb
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryAccounts\obj\Debug\LibraryAccounts.FormPassword.resources
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryAccounts\obj\Debug\LibraryAccounts.csprojResolveAssemblyReference.cache
