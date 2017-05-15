@@ -32,13 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectOfBooks));
             this.dataGridViewBooks = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.TitleOfBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AutorOfBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.YearOfPublicOfBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IzdatelstvoOfBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountOfBookVNalichii = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ISBNOfBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,16 +68,6 @@
             this.dataGridViewBooks.ReadOnly = true;
             this.dataGridViewBooks.Size = new System.Drawing.Size(707, 266);
             this.dataGridViewBooks.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(620, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Закрыть";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TitleOfBook
             // 
@@ -133,6 +123,16 @@
             this.ISBNOfBook.ReadOnly = true;
             this.ISBNOfBook.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ISBNOfBook.Width = 105;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(620, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Закрыть";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CollectOfBooks
             // 

@@ -1,0 +1,14 @@
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\bin\Debug\LibraryWPF.exe.config
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\bin\Debug\LibraryWPF.exe
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\bin\Debug\LibraryWPF.pdb
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\LibraryWPF.csprojResolveAssemblyReference.cache
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\MainWindow.g.cs
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\App.g.cs
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\LibraryWPF_MarkupCompile.cache
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\LibraryWPF_MarkupCompile.lref
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\MainWindow.baml
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\LibraryWPF.g.resources
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\LibraryWPF.Properties.Resources.resources
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\LibraryWPF.csproj.GenerateResource.Cache
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\LibraryWPF.exe
+C:\Games\C#\MyProjectSborDannyh\Library\LibraryWPF\obj\Debug\LibraryWPF.pdb

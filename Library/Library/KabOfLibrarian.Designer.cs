@@ -65,6 +65,8 @@
             this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.отправитьВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.списокКнигToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -81,8 +83,6 @@
             this.toolStripMenuItemEditUser = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDelUser = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonExportExcel = new System.Windows.Forms.Button();
-            this.отправитьВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSumOfBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYearOfPublic)).BeginInit();
@@ -473,6 +473,18 @@
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(167, 6);
+            // 
+            // отправитьВExcelToolStripMenuItem
+            // 
+            this.отправитьВExcelToolStripMenuItem.Name = "отправитьВExcelToolStripMenuItem";
+            this.отправитьВExcelToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.отправитьВExcelToolStripMenuItem.Text = "Отправить в Excel";
+            this.отправитьВExcelToolStripMenuItem.Click += new System.EventHandler(this.отправитьВExcelToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -595,17 +607,6 @@
             this.buttonExportExcel.Text = "Отправить в Excel";
             this.buttonExportExcel.UseVisualStyleBackColor = true;
             this.buttonExportExcel.Click += new System.EventHandler(this.buttonExportExcel_Click);
-            // 
-            // отправитьВExcelToolStripMenuItem
-            // 
-            this.отправитьВExcelToolStripMenuItem.Name = "отправитьВExcelToolStripMenuItem";
-            this.отправитьВExcelToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.отправитьВExcelToolStripMenuItem.Text = "Отправить в Excel";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(167, 6);
             // 
             // KabOfLibrarian
             // 

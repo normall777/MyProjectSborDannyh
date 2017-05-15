@@ -412,5 +412,9 @@ namespace Library
             }
         }
 
+        private void отправитьВExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
     }
 }
