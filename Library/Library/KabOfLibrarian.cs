@@ -5,11 +5,14 @@ using System.Xml.Serialization;
 using System.IO;
 using System.Linq;
 using LibraryModel;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace Library
 {
     public partial class KabOfLibrarian : Form
     {
+        private Excel.Application exApp;
         static bool exit;//С этой переменной можно сделать нормальный выход
         List<Student> students = new List<Student> { };//Хранит студентов на форме, позволяет сохранять
         public KabOfLibrarian()
@@ -364,5 +367,50 @@ namespace Library
             numericUpDownSumOfBooks.Value = 1;
             
         }
+
+        private void buttonExportExcel_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
+
+        private void ExportToExcel()
+        {
+            var data = GetObject();
+            var path = Directory.GetCurrentDirectory().ToString();
+            if (File.Exists(path + "\\Book.xlsx")) {
+
+                exApp = new Excel.Application();
+                exApp.Visible = true;
+                exApp.SheetsInNewWorkbook = 1;
+                exApp.Workbooks.Add(path + "\\Book.xlsx");
+
+                Excel.Worksheet exWrkSht;
+                exWrkSht = exApp.Workbooks[1].Worksheets.get_Item(1);
+                exWrkSht.get_Range("A1", "A1").Value = data.Title;
+                exWrkSht.get_Range("B3", "B3").Value = data.Author;
+                exWrkSht.get_Range("B4", "B4").Value = data.Town;
+                exWrkSht.get_Range("B5", "B5").Value = data.Izdatelstvo;
+                exWrkSht.get_Range("B6", "B6").Value = data.YearOfPublic;
+                exWrkSht.get_Range("B7", "B7").Value = data.ISBN;
+                exWrkSht.get_Range("B8", "B8").Value = data.SumOfBooks;
+                var count = 11;
+                foreach (var item in data.student)
+                {
+                    exWrkSht.get_Range($"A{count}", $"A{count}").Value = item.Name + " " + item.Surname;
+                    exWrkSht.get_Range($"B{count}", $"B{count}").Value = item.NumberOfTicket;
+                    exWrkSht.get_Range($"C{count}", $"C{count}").Value = item.Vidacha;
+                    exWrkSht.get_Range($"D{count}", $"D{count}").Value = item.Sdacha;
+                    count++;
+                }
+
+                //exApp.Workbooks[1].SaveAs($"{data.Author}.{data.Title}.{data.YearOfPublic}.xlsx");
+                
+            }
+            else
+            {
+                MessageBox.Show("Нельзя отправить в Excel, файл шаблона отсутствует", "Ошибка");
+            }
+        }
+
     }
 }
