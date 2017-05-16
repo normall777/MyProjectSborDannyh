@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditUsers));
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -159,7 +160,7 @@
             this.dateSdacha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateSdacha.Location = new System.Drawing.Point(172, 218);
             this.dateSdacha.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dateSdacha.MinDate = new System.DateTime(2017, 4, 25, 10, 9, 29, 33);
+            this.dateSdacha.MinDate = dateVidacha.Value.AddDays(1);
             this.dateSdacha.Name = "dateSdacha";
             this.dateSdacha.Size = new System.Drawing.Size(170, 29);
             this.dateSdacha.TabIndex = 11;
@@ -183,6 +184,7 @@
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonAdd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddEditUsers";
