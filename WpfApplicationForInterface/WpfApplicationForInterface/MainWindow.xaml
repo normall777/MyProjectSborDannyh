@@ -62,16 +62,46 @@
         <StackPanel Grid.Row="1" Margin="10">
             <Label>Выбранный алгоритм</Label>
             <ComboBox x:Name="enicrypt" SelectedIndex="0">
-                <ComboBoxItem>Шифр Гронсвельда</ComboBoxItem>
-                <ComboBoxItem>Шифр Цезаря</ComboBoxItem>
-                <ComboBoxItem>Шифр методом подстановки</ComboBoxItem>
+                <ComboBoxItem Content="Метод перемещения">
+                    <ComboBoxItem.ToolTip>
+                        <StackPanel Margin="0">
+                            <TextBlock Margin="0" Width="200" TextWrapping="Wrap" HorizontalAlignment="Center">это метод симметричного шифрования, в котором элементы исходного открытого текста меняют местами.
+                        Элементами текста могут быть отдельные символы (самый распространённый случай), 
+                        пары букв, тройки букв, комбинирование этих случаев и так далее.
+                            </TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem.ToolTip>
+                </ComboBoxItem>
+                <ComboBoxItem Content="Шифр Гронсвельда">
+                    <ComboBoxItem.ToolTip>
+                        <StackPanel Margin="0">
+                            <TextBlock Margin="0" Width="200" TextWrapping="Wrap" HorizontalAlignment="Center">Этот шифр сложной замены
+                                представляет собой модификацию шифра Цезаря числовым ключом.
+                                Для этого под буквами исходного сообщения записывают цифры числового ключа.
+                                Если ключ короче сообщения, то его запись циклически повторяют.
+                            </TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem.ToolTip>
+                </ComboBoxItem>
+                <ComboBoxItem Content="Шифр Цезаря">
+                    <ComboBoxItem.ToolTip>
+                        <StackPanel Margin="0">
+                            <TextBlock Margin="0" Width="200" TextWrapping="Wrap" HorizontalAlignment="Center">Вид шифра подстановки, в котором каждый символ
+                                в открытом тексте заменяется символом, 
+                                находящимся на некотором постоянном числе позиций левее 
+                                или правее него в алфавите. Например, в шифре со сдвигом 
+                                вправо на 3, А была бы заменена на Г, Б станет Д, и так далее.
+                            </TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem.ToolTip>
+                </ComboBoxItem>
             </ComboBox>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Margin="10">
             <Label>Ключ</Label>
             <TextBox x:Name="keyBox"></TextBox>
         </StackPanel>
-        <TextBox x:Name="myTextBlock" Grid.ColumnSpan="2" Grid.Row="2"></TextBox>
+        <TextBox x:Name="myTextBlock" Grid.ColumnSpan="2" Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
         <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
