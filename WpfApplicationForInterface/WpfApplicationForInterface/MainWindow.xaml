@@ -65,7 +65,7 @@
                 <ComboBoxItem Content="Метод перемещения">
                     <ComboBoxItem.ToolTip>
                         <StackPanel Margin="0">
-                            <TextBlock Margin="0" Width="200" TextWrapping="Wrap" HorizontalAlignment="Center">это метод симметричного шифрования, в котором элементы исходного открытого текста меняют местами.
+                            <TextBlock Margin="0" Width="200" TextWrapping="Wrap" HorizontalAlignment="Center">Это метод симметричного шифрования, в котором элементы исходного открытого текста меняют местами.
                         Элементами текста могут быть отдельные символы (самый распространённый случай), 
                         пары букв, тройки букв, комбинирование этих случаев и так далее.
                             </TextBlock>
