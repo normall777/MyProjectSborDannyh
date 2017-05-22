@@ -15,3 +15,15 @@ C:\Games\C#\MyProjectSborDannyh\WpfApplicationForInterface\WpfApplicationForInte
 C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\bin\Debug\WpfApplicationForInterface.exe.config
 C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\WpfApplicationForInterface.exe
 C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\WpfApplicationForInterface.pdb
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\bin\Debug\WpfApplicationForInterface.exe
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\bin\Debug\WpfApplicationForInterface.pdb
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\WpfApplicationForInterface.csprojResolveAssemblyReference.cache
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\MainWindow.g.cs
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\App.g.cs
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\WpfApplicationForInterface_MarkupCompile.cache
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\WpfApplicationForInterface_MarkupCompile.lref
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\MainWindow.baml
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\WpfApplicationForInterface.g.resources
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\WpfApplicationForInterface.Properties.Resources.resources
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\WpfApplicationForInterface.csproj.GenerateResource.Cache
+C:\Games\C#\Новая папка (2)\WpfApplicationForInterface\WpfApplicationForInterface\obj\Debug\GeneratedInternalTypeHelper.g.cs

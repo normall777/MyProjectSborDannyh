@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationForInterface"
+        xmlns:datatext="clr-namespace:WpfApplicationForInterface.Data"
         mc:Ignorable="d"
         Title="Шифрование" Height="450" Width="500">
     <Window.Resources>
+        <datatext:EnicryptionText x:Key="MyText" TextMsg="" Hash="" />
         <Style TargetType="Label">
             <Setter Property="Background" Value="#FF1CA5CF"/>
             <Setter Property="Foreground" Value="White"/>
@@ -39,7 +41,7 @@
             <Setter Property="Foreground" Value="White"/>
         </Style>
     </Window.Resources>
-    <Grid Background="#FF1CA5CF">
+    <Grid Background="#FF1CA5CF" DataContext="{StaticResource MyText}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition />
@@ -101,7 +103,8 @@
             <Label>Ключ</Label>
             <TextBox x:Name="keyBox"></TextBox>
         </StackPanel>
-        <TextBox x:Name="myTextBlock" Grid.ColumnSpan="2" Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+        <TextBox x:Name="myTextBlock" Grid.ColumnSpan="2" Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True"
+                 Text="{Binding TextMsg }"></TextBox>
         <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

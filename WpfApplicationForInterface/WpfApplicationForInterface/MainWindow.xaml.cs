@@ -34,7 +34,6 @@ namespace WpfApplicationForInterface
             binding.Path = new PropertyPath("Text");
             myTextBlock.SetBinding(TextBlock.TagProperty, binding);
         }
-
         private void Button_Shifrovka(object sender, RoutedEventArgs e)
         {
             string text = myTextBlock.Text;
@@ -162,10 +161,12 @@ namespace WpfApplicationForInterface
 
         public EnicryptionText GetObject()
         {
-            string hash = HashOfText(myTextBlock.Text);
+            EnicryptionText eniText = (EnicryptionText)this.Resources["MyText"];
+            string text = eniText.TextMsg;
+            string hash = HashOfText(text);
             return new EnicryptionText
             {
-                Text = myTextBlock.Text,
+                TextMsg = myTextBlock.Text,
                 Hash = hash
             };
         }
@@ -206,10 +207,11 @@ namespace WpfApplicationForInterface
                 {
                     data = (EnicryptionText)xs.Deserialize(file);
                 }
-                var hash = HashOfText(data.Text);
+                var hash = HashOfText(data.TextMsg);
                 if (hash == data.Hash)
                 {
-                    SetObject(data);
+                    EnicryptionText eniText = (EnicryptionText)this.Resources["MyText"];
+                    eniText.TextMsg = data.TextMsg;
                 }
                 else
                 {
@@ -217,16 +219,18 @@ namespace WpfApplicationForInterface
                     {
                         return;
                     }
-                    SetObject(data);
+                    EnicryptionText eniText = (EnicryptionText)this.Resources["MyText"];
+                    eniText.TextMsg = data.TextMsg;
                 }
             }
             
         }
 
-        private void SetObject(EnicryptionText data)
-        {
-            myTextBlock.Text = data.Text;
-        }
+        //private void SetObject(EnicryptionText data)
+        //{
+        //    EnicryptionText eniText = (EnicryptionText)this.Resources["MyText"];
+        //    eniText.TextMsg = data.TextMsg;
+        //}
 
         private void MenuItem_Save(object sender, RoutedEventArgs e)
         {
